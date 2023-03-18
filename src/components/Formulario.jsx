@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Swal from 'sweetalert2'
+
+
 export const Formulario = ({tareas, setTareas}) => {
 
   const  [tarea, setTarea] = useState('')
@@ -21,6 +24,11 @@ export const Formulario = ({tareas, setTareas}) => {
      }
      if ( nuevaTarea.texto === '')return
      setTareas([...tareas, nuevaTarea])
+     Swal.fire(
+      'Bien hecho!',
+      'Has agregado una nueva tarea!',
+      'success'
+    )
      setTarea('')
 
   }

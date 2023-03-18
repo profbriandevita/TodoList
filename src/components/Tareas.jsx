@@ -7,6 +7,7 @@ export const Tareas = ({ tarea, tareaCompletada, editaTarea, eliminarTarea}) => 
   const [editarTarea, setEditarTarea] = useState(false)
   const [nuevaTarea, setNuevaTarea] = useState(tarea.texto)
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     editaTarea(tarea.id, nuevaTarea)
@@ -15,7 +16,9 @@ export const Tareas = ({ tarea, tareaCompletada, editaTarea, eliminarTarea}) => 
 
 
   return (
+    <>
     <li className="lista-tareas__tarea">
+      
       <FontAwesomeIcon
         icon={tarea.completada ? faCheckSquare: faSquare}
         className="lista-tareas__icono lista-tareas__icono-check"
@@ -55,5 +58,6 @@ export const Tareas = ({ tarea, tareaCompletada, editaTarea, eliminarTarea}) => 
         />
       </div>
     </li>
-  );
+    </>);
+  
 };

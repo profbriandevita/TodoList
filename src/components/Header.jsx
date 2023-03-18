@@ -6,6 +6,7 @@ import { faEye, faEyeSlash  } from '@fortawesome/free-solid-svg-icons'
 export const Header = ({verCompletadas, setVerCompletadas}) => {
 
 
+
   const tareasCompeltadas = () => {
     setVerCompletadas(!verCompletadas)
   }

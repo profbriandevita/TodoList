@@ -1,8 +1,13 @@
 import { Tareas } from "./Tareas"
+import Swal from 'sweetalert2'
+
 
 
 
 export const ListarTareas = ({tareas, setTareas, verCompletadas}) => {
+
+ 
+
 
    const tareaCompletada = (id) => {
      setTareas(tareas.map((tarea) => {
@@ -16,7 +21,16 @@ export const ListarTareas = ({tareas, setTareas, verCompletadas}) => {
    const editaTarea = (id, textoNuevo) => {
     setTareas(tareas.map((tarea) => {
      if(tarea.id == id) {
-       return {...tarea, texto: textoNuevo}
+       return (
+        {...tarea, texto: textoNuevo},
+        Swal.fire(
+          'Bien hecho!',
+          'Has actualizado una tarea!',
+          'success'
+        )
+       )
+       
+       
      }
      return tarea
    }))
@@ -27,7 +41,7 @@ export const ListarTareas = ({tareas, setTareas, verCompletadas}) => {
      if(tarea.id !== id) {
        return tarea
      }
-     return
+     return;
    }))
   } 
 
